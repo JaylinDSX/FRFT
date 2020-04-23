@@ -20,17 +20,3 @@ for k = -dim/2 : dim/2
 	c = c + 1;
 end
 
-%%% CYCLE THROUGH FRACTIONAL FOURIER TRANSFORMS
-c 	= 1;
-for n = 0 : 0.1 : 2.0
-	Bn = B^n;
-	fn = abs( Bn * f );
-	plot( fn, 'b' ); 		% PLOT FOURIER MAGNITUDE
-	hold on; 
-	plot( f, 'r--' ); 		% PLOT ORIGINAL SIGNAL
-	hold off;
-	axis( [1 dim+1 0 2] );	
-	set( gca, 'Xtick', [], 'Ytick', [] );
-	text( 10,1.7, sprintf( '%0.2f', n ) );	
-	drawnow;
-end
